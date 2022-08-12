@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;200;400&family=Lato:wght@300;400&display=swap");
 * {
   padding: 0;
   margin: 0;
@@ -37,6 +38,8 @@ nav {
     Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
   background-color: #23232e;
   height: 8vh;
+  position: relative;
+  z-index: 20;
 }
 .list {
   display: flex;
@@ -51,7 +54,12 @@ nav {
 /*    HOME - SECTION  */
 .section-home {
   background-color: #fdf2e9;
-  padding: 9.6rem 0;
+  height: 94vh;
+  margin-top: -86px;
+  position: relative;
+  align-items: center;
+  display: grid;
+  padding-top: 56px;
 }
 .container-home {
   max-width: 130rem;
@@ -67,39 +75,43 @@ nav {
 }
 
 .tittle-primary {
-  font-size: 5.2rem;
+  font-size: 3.9rem;
   font-weight: 700;
-  line-height: 1.05;
-  color: #333;
-  letter-spacing: -0.5px;
+  line-height: 1.2;
+  color: #23232e;
   margin-bottom: 4.8rem;
+  font-family: "Inter", sans-serif;
+  text-transform: initial;
 }
 
 .text-description {
   font-size: 2rem;
   line-height: 2.5rem;
   margin-bottom: 4.8rem;
+  font-family: "Lato", sans-serif;
+  font-weight: 300;
+  color: #343a40;
 }
 
 .btn:link,
 .btn:visited {
+  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.18), 0 0 0 1px rgba(0, 0, 0, 0.08);
   display: inline-block;
   font-size: 2rem;
-  padding: 1.6rem 3rem;
-  border-radius: 9px;
-  border: 1px solid black;
+  padding: 1.7rem 3.1rem;
+  border-radius: 6px;
   cursor: pointer;
   text-decoration: none;
 }
 .btn--full:link,
 .btn--full:visited {
-  background-color: #16161a;
-  color: #fff;
+  background-color: #23232e;
+  color: #f7eeee;
 }
 
-.btn--full:hover,
-.btn--full:visited {
-  background-color: #23232e;
+.btn--full:hover {
+  transition: 0.3s;
+  background-color: #030303;
 }
 
 .btn--outline:link,
@@ -157,17 +169,32 @@ li {
   scroll-behavior: smooth;
   scroll-snap-type: x mandatory;
 }
+#carousel__slide1 {
+  background-image: url("/img/modelo-de-gradiente-colorido-em-um-fundo-roxo-escuro_53876-114483.webp");
+}
 
+#carousel__slide2 {
+  background-image: url("/img/autor\ \(4\).jpg");
+}
+
+#carousel__slide3 {
+  background-image: url("/img/autor\ \(3\).jpg");
+}
+
+#carousel__slide4 {
+  background-image: url("/img/Logo_mockup.jpg");
+}
 .carousel__slide {
   position: relative;
   flex: 0 0 100%;
   width: 100%;
-  background-color: #f99;
+  /*background-image: url("/img/autor\ \(3\).jpg");*/
+  background-size: cover;
   counter-increment: item;
 }
 
 .carousel__slide:nth-child(even) {
-  background-color: #99f;
+  /*background-image: url("/img/autor\ \(4\).jpg");*/
 }
 
 .carousel__slide:before {
@@ -236,6 +263,7 @@ li {
   border-radius: 50%;
   font-size: 0;
   transition: transform 0.1s;
+  margin-top: -50px !important;
 }
 
 .carousel::before,
